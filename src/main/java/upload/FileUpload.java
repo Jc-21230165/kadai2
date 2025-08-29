@@ -31,7 +31,7 @@ public class FileUpload extends HttpServlet {
  
  request.setAttribute("PATH", operation.getImagePath());
  request.setAttribute("FILES", files);
- request.getRequestDispatcher("./jsp/file.jsp").forward(request, response);
+ request.getRequestDispatcher("./jsp/uploadfile.jsp").forward(request, response);
  }
  protected void doPost(HttpServletRequest request, HttpServletResponse response)
  throws ServletException, IOException {
