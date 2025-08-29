@@ -12,7 +12,7 @@ td, th {
  padding: 5px 10px;
 }
 img {
-max-width: 150px; 
+max-width: 9999px; 
 max-height: 190px;
 }
 header {
@@ -32,16 +32,26 @@ main {
  margin-top: 10px;
  margin-bottom: 10px;
 }
-.gazoulist{
-display: grid; /* グリッドビューにする宣言 */
-grid-template-columns: repeat(4, 1fr); /* 横並びで４回繰り返し、均等幅 */
-row-gap: 2px; /* 行と行の間隔を２ピクセルにする */
-column-gap: 2px;
-padding: 10px; 
+.gazoulist {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+    padding: 10px;
+    max-width: 800px; /* 全体の幅を制御 */
+    margin: 0 auto;
 }
-.gazou{
-	border: solid 1px #000000;
-	padding: 10px;
-	background-color: white;
+
+.gazou {
+    border: 1px solid #aaa;
+    padding: 10px;
+    background-color: white;
+    text-align: center; /* 画像を中央に */
+    box-sizing: border-box;
+}
+
+.gazou img {
+    max-width: 190px;
+    max-height: 150px;
 }
 

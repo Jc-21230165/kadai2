@@ -5,10 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>画像一覧</title>
-
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"  herf="../css/style.css" >
-<!--style>
+<!-- style>
 * {
  margin: 0;
  padding: 0;
@@ -52,7 +51,6 @@ main {
  return false; // 送信を中止
  }
  }
- 
 </script>
 </head>
 <body>
@@ -64,32 +62,31 @@ main {
  <div class="buttonArea">
  <button type="submit">削除</button>
  <a href="./html/uploadform.html"><button type="button">新規登録</button></a>
- <main class="gazoulist">
  <%
- // 画像用フォルダのパス
- String imagePath = "images/";
- // ファイル名の一覧を取得
- File fileObject = new File(getServletContext().getRealPath(imagePath));
- File[] files = fileObject.listFiles();
- if (files != null) {
- for (File file : files) {
- String name = file.getName();
- String path = imagePath + name;
- %>
- <div class="">
-	 <div>
-		 <input type="checkbox" name="check" value="<%=name %>">削除
-	 </div>
-	 <div>
- 		<img src="<%=path %>" alt="画像ファイル">
- 	</div>
- 	<div><%=name %></div>
- </div>
- <%
- }
- }
- %>
- </main>
+String imagePath = "images/";
+java.io.File fileObject = new java.io.File(getServletContext().getRealPath(imagePath));
+java.io.File[] files = fileObject.listFiles();
+%>
+<main class="gazoulist">
+<%
+if (files != null) {
+    for (java.io.File file : files) {
+        String pathName = imagePath + file.getName();
+%>
+    <div class="gazou">
+        <div>
+            <input type="checkbox" name="check" value="<%=file.getName() %>">削除
+        </div>
+        <div>
+            <img src="<%=pathName %>" alt="画像ファイル">
+        </div>
+        <div><%=file.getName() %></div>
+    </div>
+<%
+    }
+}
+%>
+</main>
  </form>
  </main>
 </body>
