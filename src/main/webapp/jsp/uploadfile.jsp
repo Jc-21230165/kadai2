@@ -5,9 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>画像一覧</title>
-<link  rel ="styleheet" herf="css/style.css">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- style>
+<link rel="stylesheet"  herf="../css/style.css" >
+<!--style>
 * {
  margin: 0;
  padding: 0;
@@ -51,6 +52,7 @@ main {
  return false; // 送信を中止
  }
  }
+ 
 </script>
 </head>
 <body>
